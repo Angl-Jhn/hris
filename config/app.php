@@ -115,6 +115,7 @@ return [
     | allow maintenance mode to be controlled across multiple machines.
     |
     | Supported drivers: "file", "cache"
+    
     |
     */
 
@@ -122,5 +123,12 @@ return [
         'driver' => env('APP_MAINTENANCE_DRIVER', 'file'),
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
+    
+//     'providers' => [
+//     // Other Service Providers
+
+//     App\Providers\AuthServiceProvider::class,
+// ],
+
 
 ];
