@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\DashboardController;
 
 // Route::get('/', function () {
 //     return view('auth.login');
@@ -16,4 +17,4 @@ Route::get('/', function(){
 
 Auth::routes(); //all routes for authentication views
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home'); //dashboard
+Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard'); //dashboard

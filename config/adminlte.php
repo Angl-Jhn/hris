@@ -1,5 +1,7 @@
 <?php
 
+use function PHPSTORM_META\type;
+
 return [
 
     /*
@@ -14,7 +16,7 @@ return [
     |
     */
 
-    'title' => 'HRIS Admin',
+    'title' => 'HRIS',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -196,7 +198,7 @@ return [
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-primary elevation-4',
+    'classes_sidebar' => 'sidebar-light-primary elevation-1',
     'classes_sidebar_nav' => '',
     'classes_topnav' => 'navbar-white navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
@@ -215,8 +217,8 @@ return [
     */
 
     'sidebar_mini' => 'lg',
-    'sidebar_collapse' => false,
-    'sidebar_collapse_auto_size' => false,
+    'sidebar_collapse' => true,
+    'sidebar_collapse_auto_size' => true,
     'sidebar_collapse_remember' => false,
     'sidebar_collapse_remember_no_transition' => true,
     'sidebar_scrollbar_theme' => 'os-theme-light',
@@ -307,69 +309,54 @@ return [
 
         // Sidebar items:
         [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
+            'text' => 'Dashboard',
+            'url' => 'dashboard',
+            'icon' => 'fas fa-fw fa-home',
+        ],
+        // [
+        //     'text' => 'blog',
+        //     'url' => 'admin/blog',
+        //     'can' => 'manage-blog',
+        // ],
+        [
+            'text' => 'Users',
+            'icon' => 'fas fa-fw fa-users',
+            // 'label' => 4,
+            // 'label_color' => 'success',
+            'submenu' =>[
+                [
+                    'text' => 'List of Users',
+                    'url' => 'dashboard/list-of-users',
+                    'icon' => 'fas fa-fw fa-solid fa-list',
+                ],
+                [
+                    'text' => 'View',
+                    'icon' => 'fas fa-fw fa-regular fa-eye',
+                    'submenu' =>[
+                        [
+                            'text' => 'Account',
+                            'url' => 'dashboard/view/account',
+                            'icon' => 'fas fa-fw fa-solid fa-street-view',
+                        ]
+                    ]
+                ],
+            ]
         ],
         [
-            'text' => 'blog',
-            'url' => 'admin/blog',
-            'can' => 'manage-blog',
-        ],
-        [
-            'text' => 'pages',
-            'url' => 'admin/pages',
-            'icon' => 'far fa-fw fa-file',
-            'label' => 4,
-            'label_color' => 'success',
+            'text' => 'Roles & Permissions',
+            'url' => 'dashboard/view/roles-permissions',
+            'icon' => 'fas fa-fw fa-solid fa-chess',
         ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
-            'url' => 'admin/settings',
+            'url' => 'admin/profile ',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'change_password',
+            'text' => 'Settings',
             'url' => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text' => 'multilevel',
-            'icon' => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url' => '#',
-                ],
-                [
-                    'text' => 'level_one',
-                    'url' => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url' => '#',
-                        ],
-                        [
-                            'text' => 'level_two',
-                            'url' => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url' => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url' => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url' => '#',
-                ],
-            ],
         ],
         ['header' => 'labels'],
         [
