@@ -4,8 +4,12 @@ use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
-Route::get('/', function () {
-    return view('auth.login');
+// Route::get('/', function () {
+//     return view('auth.login');
+// });
+
+Route::get('/', function(){
+    return view ('welcome');
 });
 
 // Route::get('/', [LoginController::class, 'login'])->name('login');
